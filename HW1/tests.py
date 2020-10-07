@@ -29,7 +29,7 @@ class TestTicTac(unittest.TestCase):
         self.game.make_move(3)
         self.assertEqual(self.game.board[3], 1)
 
-    def test_make_move(self):
+    def test_change_turn(self):
         self.assertEqual(self.game.change_turn(), 2)
         self.assertEqual(self.game.change_turn(), 1)
         self.assertEqual(self.game.change_turn(), 2)
@@ -40,6 +40,7 @@ class TestTicTac(unittest.TestCase):
         self.game.make_move(1)
         self.game.make_move(2)
         self.assertTrue(self.game.check_end())
+
 
 if __name__ == '__main__':
     unittest.main()

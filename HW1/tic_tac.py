@@ -1,11 +1,15 @@
+"""Tic-tac game"""
+
+
 import numpy as np
 
 
 class BadInput(Exception):
-    pass
+    """Mock exception for TicTac validation"""
 
 
 class TicTac:
+    """Tic-tac game class"""
     win_mask = np.array([[1, 1, 1, 0, 0, 0, 0, 0, 0],
                          [0, 0, 0, 1, 1, 1, 0, 0, 0],
                          [1, 1, 1, 0, 0, 0, 1, 1, 1],
@@ -57,6 +61,7 @@ class TicTac:
         self.board[move] = 1 if self.turn == 1 else 5
 
     def change_turn(self):
+        """Change turn of players"""
         self.turn = 2 if self.turn == 1 else 1
         return self.turn
 
