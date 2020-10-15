@@ -32,10 +32,12 @@ class TicTac:
 
     def show_board(self):
         """Print the board in console"""
+        print('-------')
         for i in range(3):
-            print(TicTac.print_mapping[self.board[3*i]],
-                  TicTac.print_mapping[self.board[3*i + 1]],
-                  TicTac.print_mapping[self.board[3*i + 2]],)
+            print('|', TicTac.print_mapping[self.board[3*i]],
+                  '|', TicTac.print_mapping[self.board[3*i + 1]],
+                  '|', TicTac.print_mapping[self.board[3*i + 2]], '|', sep='')
+            print('-------')
 
     def validate_input(self, move):
         """Check input"""
