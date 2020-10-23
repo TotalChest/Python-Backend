@@ -9,7 +9,15 @@ class List(list):
             first = self[i] if i < len(self) else 0
             second = other[i] if i < len(other) else 0
             result.append(first + second)
-        return result
+        return List(result)
+
+    def __sub__(self, other):
+        result = []
+        for i in range(max(len(self), len(other))):
+            first = self[i] if i < len(self) else 0
+            second = other[i] if i < len(other) else 0
+            result.append(first - second)
+        return List(result)
 
     def __lt__(self, other):
         return sum(self) < sum(other)
@@ -33,4 +41,4 @@ if __name__ == '__main__':
     c = List()
     d = List([4, 8, 1])
     print(a + d, b + c, b + a)
-    print(b > a, d == c, a <= d, c < b, )
+    print(b > a, d == c, a <= d, c < b)
