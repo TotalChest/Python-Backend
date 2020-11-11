@@ -1,0 +1,6 @@
+[DEFAULT]
+port = 9111
+log_file = server.log
+mode = demon
+timeout = 120
+max_connections = 10
