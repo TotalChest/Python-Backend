@@ -1,15 +1,18 @@
+from memory_profiler import profile
 import cProfile
 import pstats
 import io
 
 
-def climb_stairs(n: int) -> int:
+@profile
+def steps(n: int) -> int:
     if n == 0 or n == 1:
         return 1
-    return climb_stairs(n - 1) + climb_stairs(n - 2)
+    return steps(n - 1) + steps(n - 2)
 
 
-def climb_stairs_opt(n: int) -> int:
+@profile
+def steps_opt(n: int) -> int:
     if n == 1:
         return 1
     base = [1, 1, 0]
@@ -33,8 +36,9 @@ def profile_func(func, n):
 
 
 if __name__ == "__main__":
-    profile_func(climb_stairs, 35)
+    #profile_func(steps, 35)
+    #profile_func(steps_opt, 35)
+    
+    steps(5)
+    steps_opt(5)
 
-    print("--------------------------")
-
-    profile_func(climb_stairs_opt, 35)
